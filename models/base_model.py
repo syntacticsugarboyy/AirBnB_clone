@@ -4,7 +4,7 @@
     BaseModel
 '''
 from datetime import datetime
-from uuid import uuid
+import uuid
 import models
 
 
