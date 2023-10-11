@@ -12,10 +12,21 @@ class BaseModel:
     '''
         Base Model for other classes
     '''
-    def __init__(self):
-        self.id = uuid.uuid4()
-        self.created_at = datetime.now().isoformat()
-        self.updated_at = self.created_at
+    def __init__(self, *args, **kwargs):
+        if (kwargs):
+            for key, value in kwargs.items():
+                if key == 'creates_at':
+                    value = datetime.fromisoformat(value)
+                    self.created_at = value
+                elif key == 'updated_at':
+                    value = datetime.fromisoformat(value)
+                    self.updated_at = value
+                elif key == 'id':
+                    self.id = str(value)
+        else:
+            self.id = uuid.uuid4()
+            self.created_at = datetime.now().isoformat()
+            self.updated_at = self.created_at
 
     def __str__(self):
         '''
