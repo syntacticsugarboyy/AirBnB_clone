@@ -21,11 +21,11 @@ class HBNBCommand(cmd.Cmd):
                   "Amenity": Amenity, "State": State, "Review": Review,
                   "User": User}
 
-    def do_quit(self, arg):
+    def do_quit(self, com):
         """This command intpreter should exit program"""
         return True
 
-    def do_EOF(self, arg):
+    def do_EOF(self, com):
         """This command interpreter should also exit program"""
         print("")
         return True
@@ -33,6 +33,22 @@ class HBNBCommand(cmd.Cmd):
     def emptyline(self):
         """This should not execute anything"""
         pass
+
+    def create_com(self, com):
+        """Creates a new instance of basemodel, saves it to json file
+           and prints id"""
+
+    def destroy_com(self, com):
+        """Deletes an instance based on that class name and id"""
+
+    def all_com(self, com):
+        """Prints all string representations of all instances based or
+           not on the class ex name"""
+
+    def update_com(self, com):
+        """Updates an instance based on the class nameand id by adding or
+           updating attribute"""
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
