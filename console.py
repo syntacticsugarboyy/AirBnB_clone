@@ -12,9 +12,6 @@ from models.state import State
 from models.review import Review
 from models.user import User
 import models
-import sys
-import json
-import os
 
 
 class HBNBCommand(cmd.Cmd):
