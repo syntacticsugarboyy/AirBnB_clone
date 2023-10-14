@@ -27,6 +27,7 @@ class BaseModel:
             self.id = uuid.uuid4()
             self.created_at = datetime.now().isoformat()
             self.updated_at = self.created_at
+            models.storage.new(self)
 
     def __str__(self):
         '''
@@ -40,6 +41,7 @@ class BaseModel:
             Updates updated_at with current datetime
         '''
         self.updated_at = datetime.now().isoformat()
+        models.storage.save()
 
     def to_dict(self):
         '''
