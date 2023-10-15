@@ -50,7 +50,7 @@ class FileStorage:
             Deserializes the JSON file to __objects
         '''
         allowed_class = ['BaseModel', 'User', 'State', 'City', 'Amenity',
-                        'Place', 'Review']
+                         'Place', 'Review']
         filename = FileStorage.__file_path
         if isfile(filename):
             with open(filename, 'r') as f:

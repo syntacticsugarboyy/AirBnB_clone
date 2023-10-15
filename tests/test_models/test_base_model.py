@@ -8,6 +8,7 @@ from datetime import datetime
 from uuid import UUID
 # import patch?
 
+
 class TestBaseModel(unittest.TestCase):
     '''
         BaseModel Tests
@@ -23,7 +24,10 @@ class TestBaseModel(unittest.TestCase):
         '''
             Tests the import classes
         '''
-        class_doc = __import__('models.base_model').base_model.BaseModel.__doc__
+        class_doc = (
+                __import__('models.base_model')
+                .base_model.BaseModel.__doc__
+        )
         self.assertGreater(len(class_doc), 0)
 
     def test_methodDocSave(self):
